@@ -14,16 +14,15 @@ spec:
     matchLabels:
       app: nginx #harus sama dengan label template
     matchExpressions:
-      - key: label-key
+      - key: app #possible more than 1
         operator: In
         values:
-          - label-value1
-          - label-value2
+          - nginx #possible more than 1
   template:
     metadata:
       name: pod-nginx #nama Pod, akan ada unik code dibelakang nama pod nya jika sudah dijalankan
       labels:
-        app: nginx
+        app: nginx #harus sama dengan match expression/matchlabel
     spec:
       containers:
       - name: cr-nginx
