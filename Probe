@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-nginx
+  labels:
+    app: nginx
+  annotations:
+    annotation-key: annotation__________value
+spec:
+  containers:
+    - name: cr-nginx
+      image: nginx
+      ports:
+        - containerPort: 80
+      livenessProbe:
+        httpGet:
+          path: /
+          port: 80
+        initialDelaySeconds: 0 #saat akan melakukan pengecekan perlu tunggu berapa detik
+        periodSeconds: 10 #periode pengecekan setiap 10 detik sekali
+        timeoutSeconds: 1 #jika membalikkan lebih dari 1 s dianggap unhealth
+        successThreshold: 1 #sebelumnya unhealth kemudian health, butuh berapa kali cek untuk memastikan/dianggap health 
+        failureThreshold: 3 #berapa kali pengecekan gagal hingga dianggap unhealth 
+      readinessProbe:
+        httpGet:
+          path: /
+          port: 80
+        initialDelaySeconds: 0
+        periodSeconds: 10
+        timeoutSeconds: 1
+        successThreshold: 1
+        failureThreshold: 3
+      startupProbe:
+        httpGet:
+          path: / 
+          port: 80
+        initialDelaySeconds: 0
+        periodSeconds: 10
+        timeoutSeconds: 1
+        successThreshold: 1
+        failureThreshold: 3
