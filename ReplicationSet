@@ -9,10 +9,10 @@ metadata:
     description: aplikasi nginx untuk testing ajaa
     description2: Ah... lapo da Talachi matol lina labadi hochi Ah... La nochaaa
 spec:
-  replicas: 3
-  selector:
+  replicas: 3 #jumlah Pod yg harus running
+  selector: #untuk mengseleksi Pod
     matchLabels:
-      label-key1: label-value1
+      app: nginx #harus sama dengan label template
     matchExpressions:
       - key: label-key
         operator: In
@@ -21,9 +21,9 @@ spec:
           - label-value2
   template:
     metadata:
-      name: pod-nginx
+      name: pod-nginx #nama Pod, akan ada unik code dibelakang nama pod nya jika sudah dijalankan
       labels:
-        label-key1: label-value1
+        app: nginx
     spec:
       containers:
       - name: cr-nginx
