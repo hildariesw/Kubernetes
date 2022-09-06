@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: rs-nginx
+  labels:
+    version: 1.1
+    environment: development
+  annotations:
+    description: aplikasi nginx untuk testing ajaa
+    description2: Ah... lapo da Talachi matol lina labadi hochi Ah... La nochaaa
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      label-key1: label-value1
+    matchExpressions:
+      - key: label-key
+        operator: In
+        values:
+          - label-value1
+          - label-value2
+  template:
+    metadata:
+      name: pod-nginx
+      labels:
+        label-key1: label-value1
+    spec:
+      containers:
+      - name: cr-nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 80
+          initialDelaySeconds: 0
+          periodSeconds: 10
+          failureThreshold: 3
+          successThreshold: 1
+          timeoutSeconds: 1
