@@ -6,8 +6,8 @@ metadata:
     version: 1.1
     environment: development
   annotations:
-    description: aplikasi nginx untuk testing ajaa
-    description2: Ah... lapo da Talachi matol lina labadi hochi Ah... La nochaaa
+    description: aplikasi nginx untuk testing 
+    description2: isi deskripsi jika lebih dari satu annotation
 spec:
   replicas: 3 #jumlah Pod yg harus running
   selector: #untuk mengseleksi Pod
