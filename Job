@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job-nginx
+  labels:
+    app: nginx
+spec:
+  completions: 5
+  parallelism: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      name: pod-nginx
+      labels:
+        app: nginx
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: cr-nginx
+          image: nginx
+          ports:
+            - containerPort: 80
