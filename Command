@@ -48,4 +48,8 @@
    kubectl get services
 - Menghapus service
    kubectl delete service nameService
+- Mengecek service ingress
+   kubectl get pods --namespace kube-system
+- Melihat service ingress yang sudah dicreate
+   kubectl get ingresses
 - 
