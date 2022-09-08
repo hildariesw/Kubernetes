@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx
+spec:
+  replicas: 3
+  selector: 
+    matchLabels:
+      name: nginx
+template:
+  metadata:
+    name: nginx
+    labels:
+      name: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          ports:
+            - containerPort: 80
+            
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-nginx
+spec:
+  selector:
+    labels:
+      name: nginx
+  ports:
+    port: 80
+    
+    
+---
+
+
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: Ingress-app
+  labels:
+    name: Ingress-nginx
+spec: 
+  rules:
+    - host: nginx.example.com
+      http:
+        paths:
+          - path: /
+            backend: 
+              serviceName: service-nginx
+              servicePort: 80
+    
+  
+      
+    
