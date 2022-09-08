@@ -33,10 +33,19 @@
    kubectl get pod
 - cek log
    kubectl logs webapp-2 -c simple-webapp
-- Mangakses service didalam cluster 
+- Mangakses service dari dalam cluster 
    kubectl exec nama-pod -it -- /bin/sh //masuk ke KUbernetes
    curl http://cluster-ip:port/
 - Melihat inspect dari service
    kubectl describe service nama-service
 - Melihat list endpoint yg ditembak service
    kubectl get endpoints name-service
+- Melihat Node Port
+   kubectl service name-service
+- Membuat service
+   kubectl create -f nameService.yaml
+- Melihat list Service
+   kubectl get services
+- Menghapus service
+   kubectl delete service nameService
+- 
