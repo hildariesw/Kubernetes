@@ -1,0 +1,42 @@
+1. Docker
+- run docker
+   docker run <image>:<tag>
+- building the container image
+   docker build -t <image>
+- listing locally stored docker images
+   docker images
+- running the container image
+   docker run --name <container_name> -p 8080:8080 -d <image>
+- Accessing app
+   curl ocalhost:8080
+- Listing all running containers 
+   docker ps
+- getting additional information about a container
+   docker inspect <container_name>
+
+
+
+2. Kubernetes
+- List pod
+   kubectl get pods
+- Lisr Replocation Set
+   kubectl rs
+- List list Replication Controller
+   kubectl get replicationcontrollers /  rc
+- Melihat detail Pod/Probe
+   kubectl describe pod
+- Cek via browser
+   kubectl port-forward [probe-name.yaml] 8080:80
+- cek CPU consume node
+   kubectl get node
+- cek CPU consume pod
+   kubectl get pod
+- cek log
+   kubectl logs webapp-2 -c simple-webapp
+- Mangakses service didalam cluster 
+   kubectl exec nama-pod -it -- /bin/sh //masuk ke KUbernetes
+   curl http://cluster-ip:port/
+- Melihat inspect dari service
+   kubectl describe service nama-service
+- Melihat list endpoint yg ditembak service
+   kubectl get endpoints name-service
