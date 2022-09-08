@@ -28,9 +28,9 @@
 - Cek via browser
    kubectl port-forward [probe-name.yaml] 8080:80
 - cek CPU consume node
-   kubectl get node
+   kubectl top node
 - cek CPU consume pod
-   kubectl get pod
+   kubectl top pod
 - cek log
    kubectl logs webapp-2 -c simple-webapp
 - Mangakses service dari dalam cluster 
