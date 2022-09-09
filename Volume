@@ -1,5 +1,5 @@
 apiVersion: v1
-kind: ReplicaSet
+kind: Pod
 metadata:
   name: volume1
 spec:
@@ -11,20 +11,5 @@ spec:
         name: cache-volume
   volumes:
     - name: cache-volume  //Direktori ini akan di mounting ke /cache
-      emptyDir{}
-  
-  
-  apiVersion: v1
-kind: Pod
-metadata:
-  name: test-pd
-spec:
-  containers:
-  - image: k8s.gcr.io/test-webserver
-    name: test-container
-    volumeMounts:
-    - mountPath: /cache
-      name: cache-volume
-  volumes:
-  - name: cache-volume
-    emptyDir: {}
+      emptyDir{} //volume pertama kali dibuat & akan terus ada selama Pod tersebut berjalan di Node tsb.
+ 
