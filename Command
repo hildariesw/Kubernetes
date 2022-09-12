@@ -89,5 +89,14 @@
    kubectl get node --selector='!node-role.kubernetes.io/master'
 - Mendapatkan semua Pod yang sedang berjalan di dalam Namespace saat ini
    kubectl get pods --field-selector=status.phase=Running
-- 
-
+- Describe config map
+   kubectl describe cm db-config 
+- Create config map with spec custom
+   kubectl create cm [name_cm] --from-literal=[var]=[value]
+- Create config secret 
+   kubectl create secret generic [secret_name] --from-literal=[var]=[value] --from-literal=[var]=[value]
+- Liat log dari pod name
+   kubectl -n [name_space] logs [pod]
+- exec atau mengakses kedalam pod
+   kubectl -n elastic-stack exec -it [pod_name] -- [perintah, ex: sudo, apt install, cat /log/app.log]
+   
