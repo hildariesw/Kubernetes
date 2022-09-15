@@ -99,4 +99,6 @@
    kubectl -n [name_space] logs [pod]
 - exec atau mengakses kedalam pod
    kubectl -n elastic-stack exec -it [pod_name] -- [perintah, ex: sudo, apt install, cat /log/app.log]
+- menambahkan label ke node
+   kubectl label node nama_node key:value
    
