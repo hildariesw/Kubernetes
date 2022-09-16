@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: External_Service
   labels:
-    app: Dynatrace
+    app: Dynatrace //harus sama dengan label pada pod
 spec:
   type:ExternalName
   ExternalName:Dynatrace.com
