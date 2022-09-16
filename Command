@@ -101,4 +101,13 @@
    kubectl -n elastic-stack exec -it [pod_name] -- [perintah, ex: sudo, apt install, cat /log/app.log]
 - menambahkan label ke node
    kubectl label node nama_node key:value
+- melihat environment variable
+   kubectl exec nama-pod -- env
+- mengakses service dengan DNS
+   name-service.nama-namespace.svc.cluster.local
+- melihat semua endpoint
+   kubectl get endpoints
+- melihat semua endpoint yg ditembak service tsb
+   kubect get endpoint name-service
+
    
