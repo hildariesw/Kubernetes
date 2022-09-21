@@ -109,5 +109,9 @@
    kubectl get endpoints
 - melihat semua endpoint yg ditembak service tsb
    kubect get endpoint name-service
+- membuat deployment
+   kubectl apply -f dep-name.yaml
+- melihat deployment
+   kubectl get deployments
 
    
