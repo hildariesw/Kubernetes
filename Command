@@ -113,5 +113,21 @@
    kubectl apply -f dep-name.yaml
 - melihat deployment
    kubectl get deployments
-
-   
+- rollback deployment
+   kubectl rollout undo deployment name-deployment
+- history deployment
+   kubectl rollout history deployment name-deployment
+- status deployment
+   kubectl rollout history deployment name-deployment
+- membuat persistent volume
+   kubectl create -f persistentvolume.yaml
+- melihat persistent volume
+   kubectl get pv
+- melihat deskripsi persistent volume
+   kubectl describe pv namapv
+- melihat persistent volume claim
+   kubectl get pv
+- melihat deskripsi persistent volume claim
+   kubectl describe pvc namapvc
+- menhapus pv/pvc
+   kubectl delete pv/pvc pv/pvc-name
