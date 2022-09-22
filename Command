@@ -135,3 +135,9 @@
    kubectl get statefulsets
 - melihat detail setatefulset
    kubectl describe statefulset name-statefulset
+- enable dashboard kubernetes 
+   minikube addons enable dashboard
+- cek dashboard
+   kubectl get all --namespace kubernetes-dashboard
+- akses dashboard
+   minikube dashboard
