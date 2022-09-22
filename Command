@@ -131,3 +131,7 @@
    kubectl describe pvc namapvc
 - menhapus pv/pvc
    kubectl delete pv/pvc pv/pvc-name
+- melihat statefulSet
+   kubectl get statefulsets
+- melihat detail setatefulset
+   kubectl describe statefulset name-statefulset
