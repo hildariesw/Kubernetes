@@ -141,3 +141,7 @@
    kubectl get all --namespace kubernetes-dashboard
 - akses dashboard
    minikube dashboard
+- Empty the node of all applications and mark it unschedulable
+   kubectl drain node-name --ignore-daemonsets
+- Make the node schedulable
+   kubectl uncordon node-name
