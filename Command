@@ -145,3 +145,5 @@
    kubectl drain node-name --ignore-daemonsets
 - Make the node schedulable
    kubectl uncordon node-name
+- scale deployment on Kubernets
+   kubectl scale deployment [name-deployment.yaml] --replicas=3 
